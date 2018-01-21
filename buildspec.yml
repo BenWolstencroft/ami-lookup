@@ -1,0 +1,34 @@
+version: 0.2
+
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+
+phases:
+  install:
+    commands:
+    - echo Installing prerequisites
+    - npm run build-deps
+  pre_build:
+    commands:
+    - echo Restoring node_modules
+    - npm run clean
+  build:
+    commands:
+    - echo Build started on `date`
+    - npm run restore-aws
+    - npm run build
+  post_build:
+    commands:
+    - echo Build completed on `date`
+    - npm run package
+
+artifacts:
+  files:
+    - bundle/**/*
+  discard-paths: yes
+  #base-directory: location
