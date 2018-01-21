@@ -10,7 +10,20 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "echo:\"Error: no build specified\" && exit 1",
+    "build-deps": "npm install -g cpx && npm install -g sql-cli && npm install -g mkdirp && npm install -g bestzip",
+    "clean:node": "del-cli \"node_modules\"",
+    "clean:dist": "del-cli \"dist\"",
+    "clean:bundle": "del-cli \"bundle\"",
+    "clean": "echo \"Cleaning..,\" && npm run clean:node && npm run clean:dist && npm run clean:bundle && echo \"Clean Complete\"",
+    "restore-dev": "npm install",
+    "restore-dist": "npm install --production",
+    "restore-aws": "npm install --production && npm uninstall aws-sdk --no-save",
+    "build:node": "cpx \"node_modules/**/*\" \"dist/node_modules\"",
+    "build:lambda": "cpx \"index.js\" \"dist\"",
+    "build": "echo \"Building...\" && npm run build:node && npm run build:lambda && echo \"Build Complete\"",
+    "package:create": "mkdirp \"bundle\"",
+    "package:zip": "bestzip \"bundle/ami-lookup.zip\" \"dist/*\"",
+    "package": "echo \"Packaging...\" && npm run package:create && npm run package:zip && echo \"Packaging Complete\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
