@@ -1,0 +1,20 @@
+{
+  "name": "ami-lookup",
+  "version": "1.0.0",
+  "description": "Lambda function for the lookup of the latest ami ID for amazon-linux, ubuntu, and windows >= 2012 R2 from public AWS AMI libraries",
+  "author": "Ben Wolstencroft",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BenWolstencroft/ami-lookup.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.173.0"
+  },
+  "devDependencies": {}
+}
