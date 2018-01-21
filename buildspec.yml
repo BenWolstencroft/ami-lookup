@@ -29,6 +29,7 @@ phases:
 
 artifacts:
   files:
-    - bundle/**/*
+    - bundle/ami-lookup.zip
+    - bundle/appspec.yml
   discard-paths: yes
   #base-directory: location

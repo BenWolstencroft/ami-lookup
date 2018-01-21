@@ -1,0 +1,9 @@
+version: 0.0
+resources:
+  - ami-lookup:
+      type: "AWS::Lambda::Function"
+      properties: 
+        name: ami-lookup
+        alias: ami-lookup
+        currentversion: 0.0
+        targetversion: 0.0
