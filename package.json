@@ -10,7 +10,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build-deps": "npm install -g cpx && npm install -g sql-cli && npm install -g mkdirp && npm install -g bestzip",
+    "build-deps": "npm install -g cpx && npm install -g del-cli && npm install -g mkdirp && npm install -g bestzip",
     "clean:node": "del-cli \"node_modules\"",
     "clean:dist": "del-cli \"dist\"",
     "clean:bundle": "del-cli \"bundle\"",
